@@ -4,17 +4,33 @@
  *
  * Taisha Newell-Nudd June 2023
  */
-public abstract class Card {
-//default modifier for child classes
+public class Card {
+    private String ranking;
+    private String suit;
 
+    public Card(String ranking, String suit) {
+        this.ranking = ranking;
+        this.suit = suit;
+    }
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    public String getRanking() {
+        return ranking;
+    }
+
+    public void setRanking(String ranking) {
+        this.ranking = ranking;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
+
+    public void setSuit(String suit) {
+        this.suit = suit;
+    }
+
     @Override
-    public abstract String toString();
-
-
+    public String toString() {
+        return ranking + " of " + suit;
+    }
 }

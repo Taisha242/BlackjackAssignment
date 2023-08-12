@@ -16,7 +16,7 @@ public abstract class Game {
 
     public Game(String name) {
         this.name = name;
-        players = new ArrayList();
+        players = new ArrayList<>();
     }
 
 

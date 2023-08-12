@@ -1,48 +1,37 @@
-/**
- * A class that models each Player in the game. Players have an identifier, which should be unique.
- *
- * Taisha Newell-Nudd June 2023
- */
+import java.util.ArrayList;
+
 public abstract class Player {
+    private String name;
+    private ArrayList<Card> hand;
 
-
-    private String name; //the unique name for this player
-
-
-    /**
-     * A constructor that allows you to set the player's unique ID
-     *
-     * @param name the unique ID to assign to this player.
-     */
     public Player(String name) {
         this.name = name;
+        hand = new ArrayList<>();
     }
 
-
-    /**
-     * @return the player name
-     */
     public String getName() {
         return name;
     }
 
-
-    /**
-     * Ensure that the playerID is unique
-     *
-     * @param name the player name to set
-     */
-    public void setName(String name) {
-        this.name = name;
+    public void addCardToHand(Card card) {
+        hand.add(card);
     }
 
+    protected ArrayList<Card> getHand() {
+        return hand;
+    }
 
-    /**
-     * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
-     * with logic to play your game.
-     */
+    public void initializeHand() {
+        hand.clear();
+    }
+
     public abstract void play();
 
-
+    public int calculateHandValue() {
+        int handValue = 0;
+        for (Card card : hand) {
+            // Add logic here to calculate hand value
+        }
+        return handValue;
+    }
 }
-
